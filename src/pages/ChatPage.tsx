@@ -113,7 +113,7 @@ const ChatPage: React.FC = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4 }}
         >
-          <AnimatePresence>
+              layout={true}
             {allMessages.map((msg, index) => (
               <motion.div
                 key={index}
