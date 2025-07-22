@@ -64,6 +64,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
       }
     }
   };
+
   return (
     <motion.div 
       className="min-h-screen bg-gradient-to-br from-blue-600 via-purple-600 to-pink-500 overflow-hidden"

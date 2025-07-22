@@ -63,6 +63,7 @@ const ConfessionPage: React.FC = () => {
       }
     }
   };
+
   return (
     <motion.div 
       className="max-w-lg mx-auto p-4 pt-6"
@@ -113,71 +114,71 @@ const ConfessionPage: React.FC = () => {
                 Share Your Confession
               </motion.h3>
             
-            <form onSubmit={handleSubmitConfession}>
-              <motion.textarea
-                value={confessionText}
-                onChange={(e) => setConfessionText(e.target.value)}
-                placeholder="What's on your mind? Share anonymously..."
-                className="w-full h-32 p-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent resize-none"
-                maxLength={500}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 }}
-              />
-              
-              <motion.div 
-                className="flex items-center justify-between mt-4"
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 }}
-              >
-                <div className="flex items-center space-x-2">
+              <form onSubmit={handleSubmitConfession}>
+                <motion.textarea
+                  value={confessionText}
+                  onChange={(e) => setConfessionText(e.target.value)}
+                  placeholder="What's on your mind? Share anonymously..."
+                  className="w-full h-32 p-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent resize-none"
+                  maxLength={500}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3 }}
+                />
+                
+                <motion.div 
+                  className="flex items-center justify-between mt-4"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4 }}
+                >
+                  <div className="flex items-center space-x-2">
+                    <motion.button
+                      type="button"
+                      onClick={() => setIsAnonymous(!isAnonymous)}
+                      className={`flex items-center space-x-2 px-3 py-2 rounded-lg transition-all ${
+                        isAnonymous ? 'bg-purple-100 text-purple-600' : 'bg-gray-100 text-gray-600'
+                      }`}
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      {isAnonymous ? <EyeOff size={16} /> : <Eye size={16} />}
+                      <span className="text-sm font-medium">
+                        {isAnonymous ? 'Anonymous' : 'Show Identity'}
+                      </span>
+                    </motion.button>
+                  </div>
+                  
+                  <div className="text-sm text-gray-500">
+                    {confessionText.length}/500
+                  </div>
+                </motion.div>
+                
+                <motion.div 
+                  className="flex space-x-3 mt-6"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.5 }}
+                >
                   <motion.button
                     type="button"
-                    onClick={() => setIsAnonymous(!isAnonymous)}
-                    className={`flex items-center space-x-2 px-3 py-2 rounded-lg transition-all ${
-                      isAnonymous ? 'bg-purple-100 text-purple-600' : 'bg-gray-100 text-gray-600'
-                    }`}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
+                    onClick={() => setShowNewConfession(false)}
+                    className="flex-1 bg-gray-100 text-gray-600 font-medium py-3 rounded-xl"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
                   >
-                    {isAnonymous ? <EyeOff size={16} /> : <Eye size={16} />}
-                    <span className="text-sm font-medium">
-                      {isAnonymous ? 'Anonymous' : 'Show Identity'}
-                    </span>
+                    Cancel
                   </motion.button>
-                </div>
-                
-                <div className="text-sm text-gray-500">
-                  {confessionText.length}/500
-                </div>
-              </motion.div>
-              
-              <motion.div 
-                className="flex space-x-3 mt-6"
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5 }}
-              >
-                <motion.button
-                  type="button"
-                  onClick={() => setShowNewConfession(false)}
-                  className="flex-1 bg-gray-100 text-gray-600 font-medium py-3 rounded-xl"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  Cancel
-                </motion.button>
-                <motion.button
-                  type="submit"
-                  className="flex-1 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-medium py-3 rounded-xl"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  Post
-                </motion.button>
-              </motion.div>
-            </form>
+                  <motion.button
+                    type="submit"
+                    className="flex-1 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-medium py-3 rounded-xl"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    Post
+                  </motion.button>
+                </motion.div>
+              </form>
             </motion.div>
           </motion.div>
         )}
@@ -194,7 +195,7 @@ const ConfessionPage: React.FC = () => {
             className="bg-white rounded-xl p-4 shadow-sm border border-gray-100"
             variants={itemVariants}
             whileHover={{ y: -2, shadow: "0 10px 25px rgba(0,0,0,0.1)" }}
-            layout
+            layout={true}
           >
             <div className="flex items-start space-x-3 mb-3">
               <motion.div 

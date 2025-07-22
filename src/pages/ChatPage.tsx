@@ -113,7 +113,7 @@ const ChatPage: React.FC = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4 }}
         >
-              layout={true}
+          <AnimatePresence>
             {allMessages.map((msg, index) => (
               <motion.div
                 key={index}
@@ -126,7 +126,7 @@ const ChatPage: React.FC = () => {
                   stiffness: 500,
                   damping: 30
                 }}
-                layout
+                layout={true}
               >
                 <motion.div
                   className={`max-w-xs lg:max-w-md px-4 py-2 rounded-2xl ${
