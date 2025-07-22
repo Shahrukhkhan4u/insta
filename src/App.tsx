@@ -11,9 +11,13 @@ import ProfilePage from './pages/ProfilePage';
 import AuthPage from './pages/AuthPage';
 import { AuthProvider } from './contexts/AuthContext';
 import { ChatProvider } from './contexts/ChatContext';
+import { useLenis } from './hooks/useLenis';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  
+  // Initialize Lenis smooth scrolling
+  useLenis();
 
   return (
     <AuthProvider>
