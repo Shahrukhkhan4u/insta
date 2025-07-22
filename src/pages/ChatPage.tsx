@@ -181,34 +181,6 @@ const ChatPage: React.FC = () => {
             </motion.div>
           )}
         </motion.div>
-              key={index}
-              className={`flex ${msg.isOwn ? 'justify-end' : 'justify-start'}`}
-            >
-              <div
-                className={`max-w-xs lg:max-w-md px-4 py-2 rounded-2xl ${
-                  msg.isOwn
-                    ? 'bg-blue-500 text-white'
-                    : 'bg-gray-100 text-gray-800'
-                }`}
-              >
-                <p>{msg.text}</p>
-                <p className={`text-xs mt-1 ${msg.isOwn ? 'text-blue-100' : 'text-gray-500'}`}>
-                  {msg.time}
-                </p>
-              </div>
-            </div>
-          ))}
-          
-          {chat.compatibilityScore && (
-            <div className="bg-gradient-to-r from-pink-100 to-purple-100 rounded-2xl p-4 text-center">
-              <h4 className="font-bold text-gray-800 mb-2">Compatibility Quiz Complete!</h4>
-              <div className="text-2xl font-bold text-purple-600 mb-2">
-                {chat.compatibilityScore}% Match
-              </div>
-              <p className="text-sm text-gray-600">You both answered 8/12 questions similarly!</p>
-            </div>
-          )}
-        </div>
 
         {/* Message Input */}
         <motion.form 
