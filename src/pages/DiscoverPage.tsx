@@ -424,28 +424,5 @@ const DiscoverPage: React.FC = () => {
     </div>
   );
 };
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-2xl p-6 max-w-sm w-full">
-            <h3 className="text-xl font-bold text-gray-800 mb-4">Daily Limit Reached</h3>
-            <p className="text-gray-600 mb-6">
-              You've reached your daily limit of 15 swipes. Upgrade to Premium for unlimited swipes!
-            </p>
-            <div className="space-y-3">
-              <button className="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold py-3 rounded-xl">
-                Upgrade to Premium
-              </button>
-              <button
-                onClick={() => setShowLimitModal(false)}
-                className="w-full bg-gray-100 text-gray-600 font-medium py-3 rounded-xl"
-              >
-                Continue Tomorrow
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
-    </div>
-  );
-};
 
 export default DiscoverPage;
